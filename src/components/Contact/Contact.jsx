@@ -5,8 +5,12 @@ export default function Contact({ data }) {
   const dispatch = useDispatch();
   return (
     <div className="border border-black flex flex-col gap-6 w-60 items-center rounded p-2">
-      <div className="w-full">
-        <img src={data.avatar} alt="" />
+      <div className="">
+        <img
+          src={data.avatar ? data.avatar : "/src/assets/boy-min.png"}
+          alt=""
+          className="mx-auto"
+        />
         <p className="text-center">{data.name}</p>
         <p className="text-center">{data.number}</p>
       </div>

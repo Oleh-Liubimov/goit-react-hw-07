@@ -23,7 +23,7 @@ export default function ContactForm() {
   const nameId = useId();
   const numberId = useId();
   const handleSubmit = (values, actions) => {
-    dispatch(addContact(values));
+    dispatch(addContact({name:values.name,number:values.number}));
     actions.resetForm();
   };
 
