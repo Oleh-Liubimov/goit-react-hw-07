@@ -8,7 +8,7 @@ export default function ContactList() {
  
 
   return (
-    <ul className="flex gap-3 flex-wrap justify-center ">
+    <ul className="flex gap-5 flex-wrap justify-center ">
       {contacts.map((contact) => (
         <li key={contact.id} className="">
           <Contact data={contact} />

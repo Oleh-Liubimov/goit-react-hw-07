@@ -12,9 +12,10 @@ const objSchema = Yup.object().shape({
     .required("Required")
     .matches(/^[a-zA-Z]+$/, "Only Latin letters allowed"),
   number: Yup.string()
-    .min(3, "Too short number!")
+    .min(3, "Too short!")
     .max(12, "Too long!")
-    .required("Requaired"),
+    .required("Requaired")
+    .matches(/^\d+$/, "Only digits allowed"),
 });
 
 export default function ContactForm() {
@@ -33,7 +34,7 @@ export default function ContactForm() {
       onSubmit={handleSubmit}
       validationSchema={objSchema}
     >
-      <Form className="flex flex-col mb-5 border-2 border-black rounded p-5">
+      <Form className="flex flex-col p-5">
         <label htmlFor={nameId} className="font-medium">
           Name
         </label>
@@ -41,10 +42,10 @@ export default function ContactForm() {
           type="text"
           name="name"
           id={nameId}
-          className="border border-black rounded  outline-none"
+          className="border border-black rounded outline-none p-2"
         />
         <ErrorMessage
-          className="text-red-600 mb-5"
+          className="text-red-600"
           name="name"
           component="span"
         />
@@ -56,7 +57,7 @@ export default function ContactForm() {
           type="text"
           name="number"
           id={numberId}
-          className="border border-black rounded outline-none mb-5 "
+          className="border border-black rounded outline-none mb-5 p-2 "
         />
         <ErrorMessage className="text-red-600" name="number" component="span" />
 

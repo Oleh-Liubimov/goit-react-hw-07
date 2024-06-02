@@ -7,13 +7,13 @@ export default function SearchBox() {
   const dispatch = useDispatch();
 
   return (
-    <div>
+    <div className="mx-auto px-5">
       <p>Find contacts by name</p>
       <input
         type="text"
         value={value}
         onChange={(e) => dispatch(changeFilter(e.target.value))}
-        className="border border-black rounded mb-5 outline-none "
+        className="border border-black rounded  outline-none p-2 "
       />
     </div>
   );
